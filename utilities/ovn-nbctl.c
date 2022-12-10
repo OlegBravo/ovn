@@ -1109,6 +1109,7 @@ nbctl_pre_lsp_add(struct ctl_context *ctx)
 static void
 nbctl_lsp_add(struct ctl_context *ctx)
 {
+    printf("lsp add called")
     bool may_exist = shash_find(&ctx->options, "--may-exist") != NULL;
     struct nbctl_context *nbctx = nbctl_context_get(ctx);
 
@@ -1210,6 +1211,7 @@ nbctl_lsp_add(struct ctl_context *ctx)
 
     /* Updating runtime cache. */
     shash_add(&nbctx->lsp_to_ls_map, lsp_name, ls);
+    printf(ctx)
 }
 
 static void
